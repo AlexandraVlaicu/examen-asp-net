@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+
+@model IEnumerable<Evenimente>
+
+<h2>Evenimente și Participanți</h2>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Nume Eveniment</th>
+            <th>Data Eveniment</th>
+            <th>Participanți</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var eveniment in Model)
+        {
+            <tr>
+                <td>@eveniment.durata</td>
+                <td>@eveniment.nrparticipanti</td>
+                <td>
+                    @foreach (var participant in eveniment.P)
+                    {
+                        <p>@participant.nume</p>
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
